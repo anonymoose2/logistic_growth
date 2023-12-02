@@ -1,6 +1,7 @@
 **1) (10 points) Annotate the README.md file in your logistic growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which *.csv file you used).****
    
 **Answer** 
+
 in this analysis we investigated the dynamics of population growth for a culture of Escherichia coli, with the aim of estimating inital population size, growth rate and carrying capacity.
 For this analysis I used the data: growth_data <- read.csv("/cloud/project/experiment1.csv")
 
