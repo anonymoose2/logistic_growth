@@ -3,7 +3,7 @@
 **Answer** 
 
 in this analysis we investigated the dynamics of population growth for a culture of Escherichia coli, with the aim of estimating inital population size, growth rate and carrying capacity.
-For this analysis I used the data: growth_data <- read.csv("/cloud/project/experiment1.csv")
+For this analysis I used the first dataset : growth_data <- read.csv("/cloud/project/experiment1.csv")
 
 N0 <- exp(6.8941709) #intercept of the 1st regression e^N0
 r <- 0.0100086 #gradient of the 1st regression
