@@ -101,4 +101,4 @@ homepage.**
 
 ![99e248ee-80cc-44a4-8ed0-b7ca68c43058](https://github.com/anonymoose2/logistic_growth/assets/150136026/f0298c5d-08e0-45fc-9536-138e6e6b22f6)
 
-
+The code can be found in my logistic growth repository, under Question 3 code.R
