@@ -91,11 +91,14 @@ N(t) = K + 0 · t
 Population size (at 4980 minutes) = 6.00e+10 
 N(t) = 6.00e+10
 
-This is significantly lower than the population size predicted under the exponential model as it assumes that the population is eventually  limited by the resources in the growth medium of the culture and therefore reaches a fixed carrying capcity 
+This is significantly lower than the population size predicted under the exponential model as it assumes that the population is eventually  limited by the resources in the growth medium of the culture and therefore reaches a fixed carrying capcity. 
 
 **3.(20 points) Add an R script to your repository that makes a graph
 comparing the exponential and logistic growth curves (using the same
 parameter estimates you found). Upload this graph to your repo and
 include it in the README.md file so it can be viewed in the repo
 homepage.**
+
+![99e248ee-80cc-44a4-8ed0-b7ca68c43058](https://github.com/anonymoose2/logistic_growth/assets/150136026/f0298c5d-08e0-45fc-9536-138e6e6b22f6)
+
 
