@@ -24,6 +24,46 @@ ggplot(aes(t,N), data = growth_data) +
 
 ![2cfde111-7fd9-4481-99fa-886a287c3e5e](https://github.com/anonymoose2/logistic_growth/assets/150136026/8b11a87f-6bfb-4092-bd19-68ea217239b7)
 
+These plots suggest that the popuation shows logistic growth, where it increases exponentially with time until it reaches carrying capacity and plateaus. During the period of logistic growth, population size is relatively small and resources relatively abundant.
+
+From this point, I use knowledge of these plots, along with the differential equation that relates N at time t with the starting N (N0), the growth rate (r) and the carrying capacity (K), in order to estimate these parameters.
+
+r was estimated by isolating the exponential part of the growth curve. This was arbritraily determined to be when t < 1500. I subset the data by this value and then constructed a linear model.
+
+data_subset1 <- growth_data %>% filter(t<1500) %>% mutate(N_log = log(N))
+
+model1 <- lm(N_log ~ t, data_subset1)
+summary(model1)
+
+The output gave the estimate for coefficent t to be 0.0100086, this represents the slope, and therefore r
+The intercept value was given as 6.8941709, this is N0 because it is the population size at the start.
+
+Then, I estimated K by isolating the part of the curve that represents the population at carrying capacity. Once again, I subset the data, and constructed a linear model.
+
+data_subset2 <- growth_data %>% filter(t>2500)
+
+model2 <- lm(N ~ 1, data_subset2)
+summary(model2)
+
+The output gave an intercept value of 6.00e+10, which is k
+
+To summarise, these were the parameter estimates:
+
+N0 <- exp(6.8941709) #intercept of the 1st regression e^N0
+
+r <- 0.0100086 #gradient of the 1st regression
+
+K <- 6.00e+10 #intercept of 2nd regression
+
+We can see how the predictions fit the model graphically:
+
+ggplot(aes(t,N), data = growth_data) +
+  geom_function(fun=logistic_fun, colour="red") +
+  geom_point() +
+  scale_y_continuous(trans='log10')
+
+![627252cc-c605-4bf3-bed9-bb4f77de16fb](https://github.com/anonymoose2/logistic_growth/assets/150136026/652d1bc4-3dfb-4781-86c1-f86eaef39a68)
+
 
 N0 <- exp(6.8941709) #intercept of the 1st regression e^N0
 
