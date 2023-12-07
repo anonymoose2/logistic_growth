@@ -55,7 +55,15 @@ r <- 0.0100086 #gradient of the 1st regression
 
 K <- 6.00e+10 #intercept of 2nd regression
 
-We can see how the predictions fit the model graphically:
+We can add these parameters to the following model:
+
+
+logistic_fun <- function(t) {
+   N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+   return(N)
+  }
+
+We can see how the predictions (red line) fit the model graphically:
 
 ggplot(aes(t,N), data = growth_data) +
   geom_function(fun=logistic_fun, colour="red") +
@@ -65,13 +73,6 @@ ggplot(aes(t,N), data = growth_data) +
 ![627252cc-c605-4bf3-bed9-bb4f77de16fb](https://github.com/anonymoose2/logistic_growth/assets/150136026/652d1bc4-3dfb-4781-86c1-f86eaef39a68)
 
 
-N0 <- exp(6.8941709) #intercept of the 1st regression e^N0
-
-r <- 0.0100086 #gradient of the 1st regression
-
-K <- 6.00e+10 #intercept of 2nd regression
-
-graph to show how prediction fits to model
 
 **2) (10 points) Use your estimates of N0 and r to calculate the population
 size at t = 4980 min, assuming that the population grows exponentially.
